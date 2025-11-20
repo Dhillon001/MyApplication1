@@ -1,0 +1,355 @@
+/* ===================================================================
+   style.css — Complete Portfolio Styles
+   =================================================================== */
+
+/* ─── Base & Variables ───────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+:root {
+  --bg: #080808;
+  --bg2: #131313;
+  --text: #fff;
+  --accent: #00ffee;
+  --nav-height: 80px; /* Adjust if your header height changes */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ─── Navigation ─────────────────────────────────────────────────── */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1.5rem 5%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  color: var(--text);
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+.logo span {
+  color: var(--accent);
+}
+
+#menu-icon {
+  display: none;
+  font-size: 2.4rem;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.navbar a {
+  margin-left: 2rem;
+  color: var(--text);
+  font-size: 1.6rem;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s;
+}
+.navbar a:hover,
+.navbar a.active {
+  color: var(--accent);
+  border-bottom: 3px solid var(--accent);
+}
+
+/* ─── Hero / Home Section ───────────────────────────────────────── */
+.home {
+  position: relative;
+  min-height: 100vh;
+  padding: calc(var(--nav-height) + 6rem) 5% 0 5%; /* pushes content below navbar */
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  background: url('images/AdobeStock_1540104461.jpeg')
+    right bottom/cover no-repeat fixed;
+}
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5); /* overlay for contrast */
+  z-index: 1;
+}
+.home .home-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  color: #fff;
+  text-align: left;
+}
+.home .home-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.home .home-content p {
+  font-size: 1.15rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+.home .btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background: #ffd700;   /* golden accent */
+  color: #080808;        /* dark text */
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.home .btn:hover {
+  background: #e6c200;
+}
+
+/* ─── About Section ─────────────────────────────────────────────── */
+.about {
+  background: var(--bg2);
+  padding: 6rem 5%;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+.about-left {
+  color: var(--text);
+}
+.about-img {
+  width: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+.about-left h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+.about-left p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.about-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resume-preview {
+  width: 100%;
+  aspect-ratio: 8.5 / 11;   /* letter-paper ratio */
+  border: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  background: transparent;
+  margin-bottom: 1rem;      /* space for fallback link */
+}
+
+/* ─── Skills Section ────────────────────────────────────────────── */
+.skills {
+  padding: 6rem 5%;
+  background: var(--bg);
+}
+.skills h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.skill-bar {
+  margin-bottom: 1.5rem;
+}
+.skill-bar h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.bar {
+  width: 100%;
+  background: #222;
+  height: 0.8rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.fill {
+  height: 100%;
+  background: var(--accent);
+}
+
+/* ─── Projects Section ─────────────────────────────────────────── */
+.projects {
+  padding: 6rem 5%;
+  background: var(--bg2);
+}
+.projects h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+.card {
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+.card h3 {
+  margin: 1rem;
+  font-size: 1.6rem;
+}
+.card p {
+  flex: 1;
+  margin: 0 1rem 1rem;
+  line-height: 1.4;
+}
+.btn-sm {
+  margin: 0 1rem 1rem;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* ─── Experience Section ───────────────────────────────────────── */
+.experience {
+  padding: 6rem 5%;
+  background: var(--bg);
+}
+.experience h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+.timeline .entry {
+  margin-bottom: 2rem;
+}
+.timeline .date {
+  display: block;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* ─── Contact Section ──────────────────────────────────────────── */
+.contact {
+  padding: 6rem 5%;
+  background: var(--bg2);
+  text-align: center;
+}
+.contact h2 {
+  font-size: 2.4rem;
+  margin-bottom: 2rem;
+}
+.contact form {
+  display: inline-block;
+  text-align: left;
+  max-width: 400px;
+  width: 100%;
+}
+.contact input,
+.contact textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  background: #222;
+  color: var(--text);
+  border-radius: 4px;
+}
+.contact button {
+  width: 100%;
+  padding: 0.8rem;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ─── Footer ────────────────────────────────────────────────────── */
+footer {
+  padding: 2rem 5%;
+  background: #000;
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+}
+.footer-social {
+  margin-top: 1rem;
+}
+.footer-social a {
+  margin: 0 1rem;
+  font-size: 2rem;
+  color: var(--text);
+  transition: color 0.3s;
+}
+.footer-social a:hover {
+  color: var(--accent);
+}
+footer a {
+  color: var(--accent);
+}
+
+/* ─── Responsive ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  #menu-icon {
+    display: block;
+  }
+  .navbar {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background: var(--bg2);
+    flex-direction: column;
+    display: none;
+  }
+  .navbar.show {
+    display: flex;
+  }
+  .navbar a {
+    margin: 1rem;
+    text-align: center;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-img {
+    margin: 0 auto 1.5rem;
+  }
+  .resume-preview {
+    width: 80%;
+  }
+
+  .skills,
+  .projects,
+  .experience,
+  .contact {
+    padding: 4rem 5%;
+  }
+}
