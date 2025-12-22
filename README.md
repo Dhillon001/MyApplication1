@@ -51,4 +51,4 @@ Will update once deployed.
 - **LinkedIn:** [Harsharandeep's LinkedIn](https://www.linkedin.com/in/harsharandeep-dhillon-26b291267/)  
 - **Email:** hdhillon001@berkeley.edu  
 
-Thanks for visiting my portfolio! 🚀
+Thanks for visiting my portfolio website! 🚀
