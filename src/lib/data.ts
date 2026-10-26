@@ -17,7 +17,7 @@ export const education = {
   school: "University of California, Berkeley",
   degree: "B.S. Applied Mathematics",
   concentration: "Data Science Concentration",
-  gpa: "3.7",
+  gpa: "3.62",
   graduation: "2027",
   location: "Berkeley, CA",
   honors: [
