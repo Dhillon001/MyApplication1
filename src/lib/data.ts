@@ -10,7 +10,7 @@ export const siteConfig = {
   linkedin: "https://www.linkedin.com/in/harsharandeep-dhillon-26b291267/",
   github: "https://github.com/Dhillon001",
   resumeUrl: "/resume.pdf",
-  availability: "Graduating May 2027 · Available for 2027 start",
+  availability: "Graduating 2027 · Open to co-ops, internships & full-time roles",
 };
 
 export const education = {
@@ -18,7 +18,7 @@ export const education = {
   degree: "B.S. Applied Mathematics",
   concentration: "Data Science Concentration",
   gpa: "3.7",
-  graduation: "May 2027",
+  graduation: "2027",
   location: "Berkeley, CA",
   honors: [
     "AI/ML Fellow Alum — Break Through Tech @ Cornell Tech",
