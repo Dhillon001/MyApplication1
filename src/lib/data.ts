@@ -125,6 +125,42 @@ export const experiences = [
 
 export const projects = [
   {
+    id: "agentic-code-review",
+    title: "Agentic Code Review",
+    category: "Multi-Agent AI System · Open Source",
+    featured: true,
+    description:
+      "Multi-agent pull-request reviewer built on Claude. Four specialist agents review a PR in parallel, then a stronger verifier model re-checks every finding against the real code — only verified comments get posted.",
+    highlights: [
+      "Correctness, security, performance and test specialists fan out in parallel, returning structured findings via forced tool-use JSON schemas",
+      "Verifier pass rejects speculative findings; ranking dedupes, applies severity floors and snaps comments onto real diff lines",
+      "Context retrieval pulls in call sites of changed symbols across the repo; noise files (lockfiles, bundles, generated code) are skipped before any tokens are spent",
+      "Ships as a GitHub Action or an HMAC-verified FastAPI webhook in Docker, with a labelled precision/recall eval harness",
+    ],
+    metrics: ["4 specialist agents", "Verifier model", "41 offline tests"],
+    tags: ["Python", "Claude API", "Multi-Agent", "FastAPI", "Docker", "GitHub API"],
+    gradient: "from-orange-500/20 to-rose-600/20",
+    githubUrl: "https://github.com/Dhillon001/agentic-code-review",
+  },
+  {
+    id: "ai-eval",
+    title: "ai-eval — LLM Evaluation Framework",
+    category: "AI Infrastructure · Open Source",
+    featured: true,
+    description:
+      "Offline evaluation runner that tests LLM, RAG and agent systems the way you test code: JSONL test cases in, scored runs out, and regressions blocked before they merge.",
+    highlights: [
+      "Scorers for LLM-as-judge, RAG faithfulness, retrieval metrics (recall@k, hit rate, MRR) and agent tool-call trajectories",
+      "Pluggable adapters for OpenAI, Anthropic, any HTTP service, or a deterministic offline mock",
+      "GitHub Actions regression gate evaluates the base commit and PR head, failing the build on pass→fail flips or score drops",
+      "Production-grade reliability: exponential backoff on 429/5xx, SHA-256 judge cache, per-run USD cost tracking and parallel execution",
+    ],
+    metrics: ["6 scorers", "4 adapters", "120 tests"],
+    tags: ["Python", "LLM Evaluation", "RAG", "AI Agents", "GitHub Actions", "SQLite"],
+    gradient: "from-indigo-500/20 to-cyan-600/20",
+    githubUrl: "https://github.com/Dhillon001/ai-eval",
+  },
+  {
     id: "meeting-assistant",
     title: "AI Meeting Assistant",
     category: "Full-Stack AI Application",

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ExternalLink, FolderGit2, Github } from "lucide-react";
+import { ExternalLink, FolderGit2, Github, Sparkles } from "lucide-react";
 import { projects } from "@/lib/data";
 
 export function Projects() {
@@ -37,7 +37,15 @@ export function Projects() {
               />
 
               <div className="relative p-6">
-                <div className="mb-4 flex items-center gap-3">
+                {"featured" in project && project.featured && (
+                  <span className="absolute right-5 top-5 inline-flex items-center gap-1 rounded-full border border-accent/40 bg-accent/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-accent">
+                    <Sparkles size={11} />
+                    Featured
+                  </span>
+                )}
+                <div
+                  className={`mb-4 flex items-center gap-3 ${"featured" in project && project.featured ? "pr-24" : ""}`}
+                >
                   <div className="rounded-lg border border-border bg-background/80 p-2.5">
                     <FolderGit2 size={18} className="text-accent" />
                   </div>
@@ -54,6 +62,19 @@ export function Projects() {
                 <p className="text-sm leading-relaxed text-muted">
                   {project.description}
                 </p>
+
+                {"metrics" in project && project.metrics && (
+                  <div className="mt-4 grid grid-cols-3 gap-2">
+                    {project.metrics.map((metric) => (
+                      <div
+                        key={metric}
+                        className="rounded-lg border border-border/80 bg-background/60 px-2 py-2 text-center text-[11px] font-medium leading-tight text-foreground/90"
+                      >
+                        {metric}
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 <ul className="mt-4 space-y-2">
                   {project.highlights.map((item) => (
